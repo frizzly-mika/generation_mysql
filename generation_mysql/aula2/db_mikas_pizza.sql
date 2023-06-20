@@ -57,6 +57,9 @@ INSERT INTO tb_pizzas(nome, descricao, massa_tipo, preco, categoria_id)
 values("Pizza Frango com Catupiry", "Molho de tomate, mozzarela, peiro de frango, catupiry e orégano",
 "Fina", 65.90, 6);
 
+ALTER TABLE tb_pizzas ADD CONSTRAINT fk_pizza_categoria
+FOREIGN KEY(categoria_id) REFERENCES tb_categorias(id);
+
 SELECT * FROM tb_pizzas WHERE preco > 45.00;
 SELECT * FROM tb_pizzas WHERE preco BETWEEN 50.00 AND 100.00;
 SELECT * FROM tb_pizzas WHERE nome LIKE "%m%";
